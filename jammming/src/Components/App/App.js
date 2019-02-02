@@ -29,9 +29,13 @@ class App extends Component {
     this.removeTrack= this.removeTrack.bind(this);
     this.updatePlaylistname =   this.updatePlaylistname.bind(this);
     this.savePlaylist =   this.savePlaylist.bind(this);
-
+    this.search =   this.search.bind(this);
   }
   //////////////////////////
+  search(term){
+    console.log(term);
+  }
+
   savePlaylist(){
    let  trackURIs=[];
 // uri    spotify:track:6rqhFgbbKwnb9MLmUQDhG6
@@ -80,7 +84,7 @@ class App extends Component {
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-        <SearchBar/>
+        <SearchBar onSearch={this.search}/>
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
             <Playlist onSave={this.savePlaylist} onNameChange={this.updatePlaylistname} playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack}/>
