@@ -13,15 +13,15 @@ class SearchBar extends Component {
   handleTermChange (event){
    this.setState({ barState: event.target.value});
   }
-  search(term){
-    this.props.onSearch(term);
+  search(){
+    this.props.onSearch(this.state.barState);
   }
   ////////
   render() {
     return (
       <div className="SearchBar">
         <input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange}/>
-        <a>SEARCH</a>
+        <a onClick={this.search} >SEARCH</a>
       </div>
     );
   }
