@@ -92,7 +92,9 @@ class App extends Component {
             <Playlist onSave={this.savePlaylist} onNameChange={this.updatePlaylistname} playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack}/>
           </div>
         </div>
+		<script> {window.onbeforeunload = function(event) {event.returnValue = "Write something clever here..";}}</script>
       </div>
+	  
     );
   }
 }
